@@ -1,0 +1,85 @@
+﻿
+
+<!--<div class="wwa-inventory-widget">
+
+    <div class="wwa-inventory-heading">
+        <img class="wwa-inventory-icon" ng-src="images/inventory-icon.png" alt="inventory" />
+        <span class="wwa-inventory-title">Inventory</span>
+    </div>
+
+    <div class="wwa-inventory-body" style="background-image: url(/images/{{selectedLocation.image}});">
+        <div class="wwa-inventory-area">
+
+            <div class="wwa-inventory-river-name">
+                {{selectedLocation.name}}
+            </div>
+
+            <div class="wwa-inventory-item">
+                <img src="/images/guide-icon.png"/>
+                <span class="wwa-inventory-amount">{{selecteLocation.guides}}</span>
+                <span class="wwa-inventory-caption">GUIDES</span>
+            </div>
+
+            <div class="wwa-inventory-item">
+                <img src="/images/vest-icon.png" />
+                <span class="wwa-inventory-amount">{{selecteLocation.vests}}</span>
+                <span class="wwa-inventory-caption">VESTS</span>
+            </div>
+
+            <div class="wwa-inventory-item">
+                <img src="/images/raft-icon.png" />
+                <span class="wwa-inventory-amount">{{selecteLocation.rafts}}</span>
+                <span class="wwa-inventory-caption">RAFTS</span>
+            </div>
+           
+        </div>
+    </div>
+</div>-->
+
+
+<div class="wwa-inventory-widget">
+
+    <div class="wwa-inventory-heading">
+        <i class="fa fa-ship wwa-inventory-icon"></i>
+        <span class="www-inventory-title">Inventory</span>
+    </div>
+
+    <div class="wwa-inventory-body"
+         ng-style="selectedLocation != null && { 'background-image': 'url(images/' + selectedLocation.image + ')' }">
+
+        <div ng-if="!isLoaded">
+            <i class="fa fa-refresh fa-2x fa-spin"></i>
+        </div>
+        <div ng-if="isLoaded" class="wwa-inventory-area">
+
+            <!-- RIVER NAME -->
+            <div class="wwa-inventory-river-name">
+                {{ selectedLocation.name }}
+            </div>
+
+            <!-- GUIDES -->
+            <div class="wwa-inventory-item">
+                <i class="fa fa-life-ring"></i>
+                <span class="wwa-inventory-amount">{{ selectedLocation.guides }}</span>
+                <span class="wwa-inventory-caption">GUIDES</span>
+            </div>
+
+            <!-- VESTS -->
+            <div class="wwa-inventory-item">
+                <i class="fa fa-plus-square"></i>
+                <span class="wwa-inventory-amount">{{ selectedLocation.vests }}</span>
+                <span class="wwa-inventory-caption">VESTS</span>
+            </div>
+
+            <!-- RAFTS -->
+            <div class="wwa-inventory-item">
+                <i class="fa fa-ship"></i>
+                <span class="wwa-inventory-amount">{{ selectedLocation.rafts }}</span>
+                <span class="wwa-inventory-caption">RAFTS</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
